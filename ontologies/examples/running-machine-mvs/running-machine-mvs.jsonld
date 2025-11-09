@@ -1,0 +1,42 @@
+{
+  "@context": "https://ns.slashlife.ai/agent/context/agent.jsonld",
+  "@id": "https://ns.slashlife.ai/agent/examples/running-machine-mvs#RunningMachineAgent",
+  "@type": "core:Agent",
+  "rdfs:label": "Running Machine Agent",
+  "agent:hasProfile": {
+    "@type": "agent:AgentProfile",
+    "agent:coreIdentity": {
+      "@type": "agent:AgentIdentity",
+      "agent:did": "did:example:running-machine-123",
+      "agent:title": "Running Machine Agent",
+      "agent:version": "1.0.0"
+    },
+    "agent:purposeAndRole": {
+      "@type": "agent:PurposeRole",
+      "agent:objective": "To provide a controllable interface for a running machine.",
+      "agent:owner": "did:example:owner"
+    },
+    "agent:capabilities": {
+      "@type": "agent:CapabilityBundle",
+      "agent:skill": [
+        "Start",
+        "Stop"
+      ]
+    },
+    "agent:operationalTriggersAndIO": {
+      "@type": "agent:OperationalProfile",
+      "agent:trigger": {
+        "@type": "agent:Trigger",
+        "rdfs:label": "Control Command"
+      },
+      "agent:input": {
+        "@type": "agent:InputSpec",
+        "rdfs:label": "Start/Stop Command"
+      },
+      "agent:output": {
+        "@type": "agent:OutputSpec",
+        "rdfs:label": "Machine Status"
+      }
+    }
+  }
+}

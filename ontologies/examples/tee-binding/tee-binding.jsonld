@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://ns.slashlife.ai/agent/context/agent.jsonld",
+    "https://ns.slashlife.ai/agent/context/security-binding.jsonld"
+  ],
+  "@id": "https://ns.slashlife.ai/agent/examples/tee-binding#TEEBoundAgent",
+  "@type": "core:Agent",
+  "rdfs:label": "TEE Bound Agent",
+  "agent:hasProfile": {
+    "@type": "agent:AgentProfile",
+    "agent:coreIdentity": {
+      "@type": "agent:AgentIdentity",
+      "agent:did": "did:example:tee-bound-agent-jkl",
+      "agent:title": "TEE Bound Agent",
+      "agent:version": "1.0.0"
+    },
+    "agent:purposeAndRole": {
+      "@type": "agent:PurposeRole",
+      "agent:objective": "To demonstrate the binding of an agent to a Trusted Execution Environment (TEE).",
+      "agent:owner": "did:example:owner"
+    },
+    "security:securityBinding": {
+      "@type": "security:SecurityBinding",
+      "security:cryptographicBinding": "TEE",
+      "security:trustModel": "Intel-SGX"
+    }
+  }
+}

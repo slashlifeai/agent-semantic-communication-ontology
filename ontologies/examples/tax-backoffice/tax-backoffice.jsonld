@@ -1,0 +1,43 @@
+{
+  "@context": "https://ns.slashlife.ai/agent/context/agent.jsonld",
+  "@id": "https://ns.slashlife.ai/agent/examples/tax-backoffice#TaxBackofficeAgent",
+  "@type": "core:Agent",
+  "rdfs:label": "Tax Backoffice Agent",
+  "agent:hasProfile": {
+    "@type": "agent:AgentProfile",
+    "agent:coreIdentity": {
+      "@type": "agent:AgentIdentity",
+      "agent:did": "did:example:tax-backoffice-456",
+      "agent:title": "Tax Backoffice Agent",
+      "agent:version": "1.0.0"
+    },
+    "agent:purposeAndRole": {
+      "@type": "agent:PurposeRole",
+      "agent:objective": "To automate tax-related backoffice tasks, including calculation, form preparation, and submission.",
+      "agent:owner": "did:example:owner"
+    },
+    "agent:capabilities": {
+      "@type": "agent:CapabilityBundle",
+      "agent:skill": [
+        "Tax Calculation",
+        "Tax Form Preparation",
+        "Tax Form Submission"
+      ]
+    },
+    "agent:operationalTriggersAndIO": {
+      "@type": "agent:OperationalProfile",
+      "agent:trigger": {
+        "@type": "agent:Trigger",
+        "rdfs:label": "Tax Filing Request"
+      },
+      "agent:input": {
+        "@type": "agent:InputSpec",
+        "rdfs:label": "Financial Data"
+      },
+      "agent:output": {
+        "@type": "agent:OutputSpec",
+        "rdfs:label": "Completed Tax Forms"
+      }
+    }
+  }
+}

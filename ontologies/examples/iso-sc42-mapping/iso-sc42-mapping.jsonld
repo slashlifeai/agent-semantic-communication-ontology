@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "agent": "https://ns.slashlife.ai/agent/agent#",
+    "core": "https://ns.slashlife.ai/agent/core#",
+    "iso": "http://iso.org/23053#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://ns.slashlife.ai/agent/examples/iso-sc42-mapping#ISOAgent",
+  "@type": ["core:Agent", "iso:AI_System"],
+  "rdfs:label": "ISO SC42 Mapped Agent",
+  "agent:hasProfile": {
+    "@type": "agent:AgentProfile",
+    "agent:coreIdentity": {
+      "@type": "agent:AgentIdentity",
+      "agent:did": "did:example:iso-agent-123",
+      "agent:title": "ISO SC42 Mapped Agent",
+      "agent:version": "1.0.0"
+    },
+    "agent:purposeAndRole": {
+      "@type": "agent:PurposeRole",
+      "agent:objective": "To demonstrate the mapping between the agent ontology and ISO/IEC AWI 23053.",
+      "agent:owner": "did:example:owner"
+    }
+  }
+}

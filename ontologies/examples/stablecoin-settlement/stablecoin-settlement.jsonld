@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://ns.slashlife.ai/agent/context/agent.jsonld",
+    "https://ns.slashlife.ai/agent/context/payment.jsonld"
+  ],
+  "@id": "https://ns.slashlife.ai/agent/examples/stablecoin-settlement#StablecoinSettlementAgent",
+  "@type": "core:Agent",
+  "rdfs:label": "Stablecoin Settlement Agent",
+  "agent:hasProfile": {
+    "@type": "agent:AgentProfile",
+    "agent:coreIdentity": {
+      "@type": "agent:AgentIdentity",
+      "agent:did": "did:example:stablecoin-settlement-def",
+      "agent:title": "Stablecoin Settlement Agent",
+      "agent:version": "1.0.0"
+    },
+    "agent:purposeAndRole": {
+      "@type": "agent:PurposeRole",
+      "agent:objective": "To facilitate the settlement of transactions using stablecoins.",
+      "agent:owner": "did:example:owner"
+    },
+    "agent:capabilities": {
+      "@type": "agent:CapabilityBundle",
+      "agent:skill": [
+        "Stablecoin Transfer",
+        "Transaction Recording"
+      ]
+    },
+    "agent:operationalTriggersAndIO": {
+      "@type": "agent:OperationalProfile",
+      "agent:trigger": {
+        "@type": "agent:Trigger",
+        "rdfs:label": "Settlement Request"
+      },
+      "agent:input": {
+        "@type": "agent:InputSpec",
+        "rdfs:label": "Payment Intent"
+      },
+      "agent:output": {
+        "@type": "agent:OutputSpec",
+        "rdfs:label": "Transaction Receipt"
+      }
+    },
+    "payment:hasPaymentMethod": {
+      "@type": "payment:PaymentMethod",
+      "payment:currency": "USD",
+      "payment:paymentSystem": "Stablecoin"
+    }
+  }
+}

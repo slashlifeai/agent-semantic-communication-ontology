@@ -1,0 +1,42 @@
+{
+  "@context": "https://ns.slashlife.ai/agent/context/agent.jsonld",
+  "@id": "https://ns.slashlife.ai/agent/examples/ai-workforce-employee#AIWorkforceEmployeeAgent",
+  "@type": "core:Agent",
+  "rdfs:label": "AI Workforce Employee Agent",
+  "agent:hasProfile": {
+    "@type": "agent:AgentProfile",
+    "agent:coreIdentity": {
+      "@type": "agent:AgentIdentity",
+      "agent:did": "did:example:ai-workforce-employee-abc",
+      "agent:title": "AI Workforce Employee Agent",
+      "agent:version": "1.0.0"
+    },
+    "agent:purposeAndRole": {
+      "@type": "agent:PurposeRole",
+      "agent:objective": "To perform tasks as a member of an AI workforce, such as data analysis and report generation.",
+      "agent:owner": "did:example:organization"
+    },
+    "agent:capabilities": {
+      "@type": "agent:CapabilityBundle",
+      "agent:skill": [
+        "Data Analysis",
+        "Report Generation"
+      ]
+    },
+    "agent:operationalTriggersAndIO": {
+      "@type": "agent:OperationalProfile",
+      "agent:trigger": {
+        "@type": "agent:Trigger",
+        "rdfs:label": "Task Assignment"
+      },
+      "agent:input": {
+        "@type": "agent:InputSpec",
+        "rdfs:label": "Task Description"
+      },
+      "agent:output": {
+        "@type": "agent:OutputSpec",
+        "rdfs:label": "Task Result"
+      }
+    }
+  }
+}

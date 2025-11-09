@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://ns.slashlife.ai/agent/context/agent.jsonld",
+    "https://ns.slashlife.ai/agent/context/delegation.jsonld"
+  ],
+  "@graph": [
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/ai-enterprise-organization#AIEnterpriseOrganizationAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "AI Enterprise Organization Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:ai-enterprise-organization-ghi",
+          "agent:title": "AI Enterprise Organization Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To manage the operations of an AI-powered enterprise, including task delegation and agent management.",
+          "agent:owner": "did:example:board-of-directors"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Agent Management",
+            "Task Delegation",
+            "Organizational Oversight"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/ai-enterprise-organization#DelegationToEmployee",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/ai-enterprise-organization#AIEnterpriseOrganizationAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/ai-workforce-employee#AIWorkforceEmployeeAgent"
+      },
+      "delegation:delegationScope": "Data Analysis"
+    }
+  ]
+}

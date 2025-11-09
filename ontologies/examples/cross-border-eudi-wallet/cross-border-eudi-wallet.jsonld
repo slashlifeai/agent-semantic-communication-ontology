@@ -1,0 +1,50 @@
+{
+  "@context": "https://ns.slashlife.ai/agent/context/agent.jsonld",
+  "@id": "https://ns.slashlife.ai/agent/examples/cross-border-eudi-wallet#EUDIWalletAgent",
+  "@type": "core:Agent",
+  "rdfs:label": "EUDI Wallet Agent",
+  "agent:hasProfile": {
+    "@type": "agent:AgentProfile",
+    "agent:coreIdentity": {
+      "@type": "agent:AgentIdentity",
+      "agent:did": "did:example:123456789abcdefghi",
+      "agent:title": "EUDI Wallet Agent",
+      "agent:version": "1.0.0"
+    },
+    "agent:purposeAndRole": {
+      "@type": "agent:PurposeRole",
+      "agent:objective": "To provide a secure and reliable way to manage and present European Digital Identity (EUDI) credentials for cross-border authentication and data sharing.",
+      "agent:owner": "did:example:owner"
+    },
+    "agent:capabilities": {
+      "@type": "agent:CapabilityBundle",
+      "agent:skill": "EUDI Wallet Management"
+    },
+    "agent:operationalTriggersAndIO": {
+      "@type": "agent:OperationalProfile",
+      "agent:trigger": {
+        "@type": "agent:Trigger",
+        "rdfs:label": "Presentation Request"
+      },
+      "agent:input": {
+        "@type": "agent:InputSpec",
+        "rdfs:label": "Verifiable Presentation Request"
+      },
+      "agent:output": {
+        "@type": "agent:OutputSpec",
+        "rdfs:label": "Verifiable Presentation"
+      }
+    },
+    "agent:systemIntegrationAndDependencies": {
+      "@type": "agent:SystemIntegration",
+      "agent:dependsOn": {
+        "@id": "https://example.com/eud-wallet-service"
+      }
+    },
+    "security:securityBinding": {
+      "@type": "security:SecurityBinding",
+      "security:cryptographicBinding": "JWS",
+      "security:trustModel": "W3C-VC-JWT"
+    }
+  }
+}

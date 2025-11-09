@@ -1,0 +1,42 @@
+{
+  "@context": "https://ns.slashlife.ai/agent/context/delegation.jsonld",
+  "@graph": [
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#TopLevelAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "Top Level Agent"
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#MidLevelAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "Mid Level Agent"
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#LowLevelAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "Low Level Agent"
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#Delegation1",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#TopLevelAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#MidLevelAgent"
+      },
+      "delegation:delegationScope": "Task A"
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#Delegation2",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#MidLevelAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/multi-agent-delegation-chain#LowLevelAgent"
+      },
+      "delegation:delegationScope": "Sub-Task A.1"
+    }
+  ]
+}
