@@ -57,7 +57,7 @@ This project extends Web principles into autonomous agent interaction:
 
 ## 3. Reference Implementation
 
-The ontology is validated against **SlashLife 的「[AI Workforce OS](https://slashlife.ai/technology/workforceos/)」與「AI Backoffice」**, an agent‑native runtime supporting cross‑border operational use cases.
+Parts of the ontology are validated against **SlashLife 的「[AI Workforce OS](https://slashlife.ai/technology/workforceos/)」與「AI Backoffice」**, an agent‑native runtime supporting cross‑border operational use cases.
 
 The CG encourages independent implementations.  
 The ontology itself is vendor‑neutral and not bound to any runtime.
