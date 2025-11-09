@@ -1,0 +1,120 @@
+@prefix : <http://example.org/agent-ontology/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Core Ontology for Agent Semantics
+#################################################################
+
+:AgentEntity a owl:Class ;
+    rdfs:label "AgentEntity" ;
+    rdfs:comment "A general semantic entity participating in agent communication, delegation, or execution." .
+
+:Agent a owl:Class ;
+    rdfs:subClassOf :AgentEntity ;
+    rdfs:label "Agent" ;
+    rdfs:comment "An autonomous actor capable of perceiving, interpreting, or executing actions within a delegated semantic environment." .
+
+:Capability a owl:Class ;
+    rdfs:label "Capability" ;
+    rdfs:comment "A describable functional competence or operational capacity of an Agent." .
+
+:Intent a owl:Class ;
+    rdfs:label "Intent" ;
+    rdfs:comment "A semantic expression of purpose, objective, or expected action outcome." .
+
+:Delegation a owl:Class ;
+    rdfs:label "Delegation" ;
+    rdfs:comment "A structured semantic relation where one Agent authorizes another to act within a defined scope." .
+
+:ExecutionContext a owl:Class ;
+    rdfs:label "ExecutionContext" ;
+    rdfs:comment "A contextual frame describing conditions, trust anchors, or constraints associated with an Agent action." .
+
+:Action a owl:Class ;
+    rdfs:label "Action" ;
+    rdfs:comment "A concrete execution event initiated by an Agent, producing observable or verifiable consequences." .
+
+:Artifact a owl:Class ;
+    rdfs:label "Artifact" ;
+    rdfs:comment "A produced output or result generated through agent execution." .
+
+:TraceEvent a owl:Class ;
+    rdfs:label "TraceEvent" ;
+    rdfs:comment "A verifiable record linking an Agent, an Action, and contextual constraints." .
+
+#################################################################
+# Core Properties
+#################################################################
+
+:hasIntent a owl:ObjectProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range :Intent ;
+    rdfs:label "hasIntent" ;
+    rdfs:comment "Associates an Agent with its intended objective or semantic purpose." .
+
+:hasCapability a owl:ObjectProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range :Capability ;
+    rdfs:label "hasCapability" ;
+    rdfs:comment "Associates an Agent with a Capability it is able to perform." .
+
+:delegatesTo a owl:ObjectProperty ;
+    rdfs:domain :Delegation ;
+    rdfs:range :Agent ;
+    rdfs:label "delegatesTo" ;
+    rdfs:comment "Indicates the Agent receiving delegated authority." .
+
+:delegatedBy a owl:ObjectProperty ;
+    rdfs:domain :Delegation ;
+    rdfs:range :Agent ;
+    rdfs:label "delegatedBy" ;
+    rdfs:comment "Indicates the Agent granting delegated authority." .
+
+:delegationScope a owl:ObjectProperty ;
+    rdfs:domain :Delegation ;
+    rdfs:range :Capability ;
+    rdfs:label "delegationScope" ;
+    rdfs:comment "Specifies the scope of allowed capabilities within a Delegation relation." .
+
+:executesAction a owl:ObjectProperty ;
+    rdfs:domain :Agent ;
+    rdfs:range :Action ;
+    rdfs:label "executesAction" ;
+    rdfs:comment "Associates an Agent with an Action it performs." .
+
+:producesArtifact a owl:ObjectProperty ;
+    rdfs:domain :Action ;
+    rdfs:range :Artifact ;
+    rdfs:label "producesArtifact" ;
+    rdfs:comment "Specifies the Artifact produced by an Action." .
+
+:recordedIn a owl:ObjectProperty ;
+    rdfs:domain :Action ;
+    rdfs:range :TraceEvent ;
+    rdfs:label "recordedIn" ;
+    rdfs:comment "Links an Action to its verifiable trace record." .
+
+:contextOf a owl:ObjectProperty ;
+    rdfs:domain :ExecutionContext ;
+    rdfs:range :Action ;
+    rdfs:label "contextOf" ;
+    rdfs:comment "Indicates that an ExecutionContext applies to a specific Action." .
+
+#################################################################
+# Datatype Properties
+#################################################################
+
+:timestamp a owl:DatatypeProperty ;
+    rdfs:domain :TraceEvent ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "timestamp" ;
+    rdfs:comment "Timestamp corresponding to the trace event." .
+
+:description a owl:DatatypeProperty ;
+    rdfs:domain :Artifact ;
+    rdfs:range xsd:string ;
+    rdfs:label "description" ;
+    rdfs:comment "A human-readable description of an Artifact." .
