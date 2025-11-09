@@ -1,0 +1,386 @@
+{
+  "@context": [
+    "https://ns.slashlife.ai/agent/context/agent.jsonld",
+    "https://ns.slashlife.ai/agent/context/intent.jsonld",
+    "https://ns.slashlife.ai/agent/context/delegation.jsonld",
+    "https://ns.slashlife.ai/agent/context/execution-context.jsonld",
+    "https://ns.slashlife.ai/agent/context/capability.jsonld"
+  ],
+  "@graph": [
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ConnectedLivingProcurementAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "ConnectedLiving Procurement Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:connectedliving-procurement-agent",
+          "agent:title": "ConnectedLiving Procurement Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To source and procure components/products for ConnectedLiving brand.",
+          "agent:owner": "did:example:connectedliving-inc"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Supplier Sourcing",
+            "Contract Negotiation",
+            "Order Placement"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSalesAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "InnovateTech Taiwan Sales Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:innovatetech-sales-agent",
+          "agent:title": "InnovateTech Taiwan Sales Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To manage client relationships and secure manufacturing/design contracts.",
+          "agent:owner": "did:example:innovatetech-taiwan"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Client Communication",
+            "Proposal Generation",
+            "Contract Management"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "InnovateTech Taiwan Production Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:innovatetech-production-agent",
+          "agent:title": "InnovateTech Taiwan Production Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To execute manufacturing processes according to specifications.",
+          "agent:owner": "did:example:innovatetech-taiwan"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Manufacturing Execution",
+            "Quality Control",
+            "Assembly"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechRD_Agent",
+      "@type": "core:Agent",
+      "rdfs:label": "InnovateTech Taiwan R&D Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:innovatetech-rd-agent",
+          "agent:title": "InnovateTech Taiwan R&D Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To design and develop new products and optimize existing ones.",
+          "agent:owner": "did:example:innovatetech-taiwan"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Product Design",
+            "Prototyping",
+            "Performance Optimization",
+            "Smart Energy-Efficient Thermostat Design"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechBrandStrategyAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "InnovateTech Taiwan Brand Strategy Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:innovatetech-brand-strategy-agent",
+          "agent:title": "InnovateTech Taiwan Brand Strategy Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To define and execute the global brand strategy for InnovateHome.",
+          "agent:owner": "did:example:innovatetech-taiwan"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Brand Development",
+            "Market Analysis",
+            "Strategic Planning"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechMarketingAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "InnovateTech Taiwan Marketing Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:innovatetech-marketing-agent",
+          "agent:title": "InnovateTech Taiwan Marketing Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To execute global digital marketing campaigns for InnovateHome.",
+          "agent:owner": "did:example:innovatetech-taiwan"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Digital Marketing",
+            "Campaign Management",
+            "Social Media Management"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTecheCommerceAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "InnovateTech Taiwan eCommerce Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:innovatetech-ecommerce-agent",
+          "agent:title": "InnovateTech Taiwan eCommerce Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To manage online sales, payments, and logistics for InnovateHome.",
+          "agent:owner": "did:example:innovatetech-taiwan"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Online Sales",
+            "Payment Processing",
+            "Order Fulfillment",
+            "Logistics Management"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSupplyChainAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "InnovateTech Taiwan Supply Chain Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:innovatetech-supplychain-agent",
+          "agent:title": "InnovateTech Taiwan Supply Chain Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To manage global supply chain and component procurement for InnovateHome.",
+          "agent:owner": "did:example:innovatetech-taiwan"
+        },
+        "agent:capabilities": {
+          "@type": "agent:CapabilityBundle",
+          "agent:skill": [
+            "Supplier Management",
+            "Inventory Management",
+            "Logistics Coordination"
+          ]
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ConsumerAgent",
+      "@type": "core:Agent",
+      "rdfs:label": "End Consumer Agent",
+      "agent:hasProfile": {
+        "@type": "agent:AgentProfile",
+        "agent:coreIdentity": {
+          "@type": "agent:AgentIdentity",
+          "agent:did": "did:example:consumer-agent-123",
+          "agent:title": "End Consumer Agent",
+          "agent:version": "1.0.0"
+        },
+        "agent:purposeAndRole": {
+          "@type": "agent:PurposeRole",
+          "agent:objective": "To purchase smart home products.",
+          "agent:owner": "did:example:consumer-123"
+        }
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_ProcurementIntent",
+      "@type": "core:Intent",
+      "rdfs:label": "OEM Order for CL-T-200 Thermostats",
+      "intent:objective": "Manufacture 100,000 CL-T-200 thermostats according to design #CL-SPEC-2025.",
+      "intent:input": "https://example.com/connectedliving/design-specs/CL-SPEC-2025",
+      "intent:output": "100,000 CL-T-200 thermostats and QC report."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_Delegation_SalesToProduction",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSalesAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent"
+      },
+      "delegation:delegationScope": "Strictly manufacture 100,000 CL-T-200 thermostats as per ConnectedLiving's design #CL-SPEC-2025, with 99.8% minimum yield."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_ManufacturingAction",
+      "@type": "core:Action",
+      "rdfs:label": "OEM Manufacturing of CL-T-200",
+      "core:contextOf": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_Delegation_SalesToProduction"
+      },
+      "core:producesArtifact": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_QCReport"
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_QCReport",
+      "@type": "core:Artifact",
+      "rdfs:label": "OEM Quality Control Report for CL-T-200",
+      "core:description": "QC report for 100,000 CL-T-200 thermostats. Yield: 99.9%. Conforms to #CL-SPEC-2025."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ODM_DesignProposal",
+      "@type": "core:Artifact",
+      "rdfs:label": "InnovateTech IT-T-300 Thermostat Design Proposal",
+      "core:description": "Proposal for a new smart thermostat (IT-T-300) with lower power consumption and predictive maintenance. Design Spec: https://example.com/innovatetech/design-specs/IT-SPEC-300"
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ODM_ProcurementIntent",
+      "@type": "core:Intent",
+      "rdfs:label": "ODM Order for IT-T-300 Thermostats (ConnectedLiving EcoSense)",
+      "intent:objective": "Procure 200,000 IT-T-300 thermostats, rebranded as 'ConnectedLiving EcoSense'.",
+      "intent:input": "https://example.com/innovatetech/design-specs/IT-SPEC-300",
+      "intent:output": "200,000 ConnectedLiving EcoSense thermostats and QC report."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ODM_Delegation_SalesToProduction",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSalesAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent"
+      },
+      "delegation:delegationScope": "Manufacture 200,000 IT-T-300 thermostats based on InnovateTech's design #IT-SPEC-300, with ConnectedLiving EcoSense branding."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_BrandLaunchIntent",
+      "@type": "core:Intent",
+      "rdfs:label": "InnovateHome Global Brand Launch",
+      "intent:objective": "Globally launch 'InnovateHome' brand smart thermostats and achieve 500,000 online sales in year 1.",
+      "intent:input": "Market research, brand guidelines, product designs.",
+      "intent:output": "500,000 units sold, established brand presence."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToMarketing",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechBrandStrategyAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechMarketingAgent"
+      },
+      "delegation:delegationScope": "Execute global digital marketing campaigns for InnovateHome smart thermostats."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToProduction",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechBrandStrategyAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent"
+      },
+      "delegation:delegationScope": "Manufacture 500,000 InnovateHome smart thermostats for own inventory."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToeCommerce",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechBrandStrategyAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTecheCommerceAgent"
+      },
+      "delegation:delegationScope": "Manage InnovateHome online sales, payment processing, and logistics."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToSupplyChain",
+      "@type": "delegation:Delegation",
+      "delegation:delegatedBy": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechBrandStrategyAgent"
+      },
+      "delegation:delegatesTo": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSupplyChainAgent"
+      },
+      "delegation:delegationScope": "Manage global supply chain and component procurement for InnovateHome production."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ConsumerPurchaseIntent",
+      "@type": "core:Intent",
+      "rdfs:label": "Consumer Purchase of InnovateHome Thermostat",
+      "intent:objective": "Purchase one InnovateHome smart thermostat from the official website.",
+      "intent:input": "Customer order details, payment information.",
+      "intent:output": "InnovateHome smart thermostat delivered, payment confirmed."
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#eCommerceOrderProcessingAction",
+      "@type": "core:Action",
+      "rdfs:label": "eCommerce Order Processing",
+      "core:contextOf": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToeCommerce"
+      },
+      "core:producesArtifact": {
+        "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#eCommerceOrderConfirmation"
+      }
+    },
+    {
+      "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#eCommerceOrderConfirmation",
+      "@type": "core:Artifact",
+      "rdfs:label": "InnovateHome Order Confirmation",
+      "core:description": "Order #IH-20251109-001 confirmed. Payment received. Shipping initiated."
+    }
+  ]
+}
