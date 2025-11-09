@@ -23,6 +23,9 @@ The ontology defined here is abstracted from real operational cross‑border sys
 - **TEE/DID/Audit Chain Binding**  
   Cryptographic identity and execution guarantees tied to secure hardware anchors.
 
+- **Economic and Payment Primitives**  
+  A model for defining and executing value transfers (payments) between agents in a standardized, auditable manner.
+
 ### 1.2 Relationship to the Web and Semantic Web
 
 This project extends Web principles into autonomous agent interaction:

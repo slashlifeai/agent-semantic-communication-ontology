@@ -27,6 +27,7 @@ Let's imagine a simple story to see how this works in practice.
 3.  **Agent Collaboration:** Agent A determines it needs to book a flight. It discovers **Agent B**, a specialized agent run by an airline, which offers a "findBestFlight" **Capability**.
 4.  **Chained Delegation:** To use this service, Agent A delegates a more specific authority to **Agent B**: "permission to find a flight for Alice for her upcoming trip". This new delegation is cryptographically linked to Alice's original delegation, forming a **Delegation Chain**.
 5.  **Execution & Accountability:** Agent B performs the flight search. This action is recorded as an immutable event on a **Ledger**, noting which agent did it, when, and under whose authority. This creates a verifiable **Audit Chain**.
+6.  **Payment & Settlement:** Upon successful completion recorded on the ledger, a **PaymentIntent** is automatically triggered from Alice's account to Agent B's account, compensating it for the service. The entire lifecycle—from delegation to execution to settlement—is now linked and auditable.
 
 In this scenario, every step is explicit, verifiable, and machine-interpretable, thanks to the shared ontology.
 
