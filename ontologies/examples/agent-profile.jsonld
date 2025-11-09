@@ -1,5 +1,5 @@
 {
-  "@context": "https://slashlife.ai/ontology/context/agent-profile.jsonld",
+  "@context": "https://ns.slashlife.ai/agent/context/agent-profile.jsonld",
 
   "id": "did:key:z6MkqExampleProfileAgent",
 
