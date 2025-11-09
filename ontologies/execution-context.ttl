@@ -1,5 +1,5 @@
-@prefix ctx: <http://example.org/agent-ontology/execution-context#> .
-@prefix intent: <http://example.org/agent-ontology/intent#> .
+@prefix ctx: <https://ns.slashlife.ai/agent/execution-context#> .
+@prefix intent: <https://ns.slashlife.ai/agent/intent#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .

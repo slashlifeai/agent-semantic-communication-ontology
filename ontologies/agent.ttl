@@ -11,13 +11,12 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-@prefix sac: <https://slashlife.ai/ontology/agent/> .
-@prefix sap: <https://slashlife.ai/ontology/agent-profile/> .
+@prefix agent-profile: <https://ns.slashlife.ai/agent/agent-profile#> .
 
-sac:hasProfile a owl:ObjectProperty ;
+:hasProfile a owl:ObjectProperty ;
     rdfs:label "has profile" ;
-    rdfs:domain sac:Agent ;
-    rdfs:range sap:AgentProfile ;
+    rdfs:domain core:Agent ;
+    rdfs:range agent-profile:AgentProfile ;
     rdfs:comment "Links an Agent to its pragmatic / behavioral profile." .
 
 

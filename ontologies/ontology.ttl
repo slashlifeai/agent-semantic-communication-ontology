@@ -12,4 +12,8 @@
     owl:imports <https://ns.slashlife.ai/agent/delegation> ;
     owl:imports <https://ns.slashlife.ai/agent/accountability> ;
     owl:imports <https://ns.slashlife.ai/agent/ledger> ;
-    owl:imports <https://ns.slashlife.ai/agent/identity> .
+    owl:imports <https://ns.slashlife.ai/agent/identity> ;
+    owl:imports <https://ns.slashlife.ai/agent/agent-profile> ;
+    owl:imports <https://ns.slashlife.ai/agent/execution-context> ;
+    owl:imports <https://ns.slashlife.ai/agent/intent> ;
+    owl:imports <https://ns.slashlife.ai/agent/security-binding> .
