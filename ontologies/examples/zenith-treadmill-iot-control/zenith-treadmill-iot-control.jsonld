@@ -1,6 +1,6 @@
 {
   "@context": "https://ns.slashlife.ai/agent/context/agent.jsonld",
-  "@id": "https://ns.slashlife.ai/agent/examples/bh-treadmill-iot-control#BHTreadmillAgent",
+  "@id": "https://ns.slashlife.ai/agent/examples/zenith-treadmill-iot-control#ZenithTreadmillAgent",
   "@type": "core:Agent",
   "rdfs:label": "Zenith Treadmill Agent (Model Z-800)",
   "agent:hasProfile": {

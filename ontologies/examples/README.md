@@ -13,10 +13,10 @@ Each subdirectory within `examples/` represents a distinct use case and typicall
 
 We encourage you to explore each example to understand how the Agent Ontology can be applied to various domains. Here are some of the key use cases currently available:
 
-### 1. BH Treadmill IoT Control
+### 1. Zenith Treadmill IoT Control
 *   **Description**: Demonstrates how a Zenith Treadmill can be modeled as an agent, allowing secure delegation of control to third-party fitness applications for interactive workout sessions.
 *   **Key Concepts**: Agent as Physical Device, Intent, Delegation, Capabilities, Security Binding, IoT Control.
-*   **Location**: `bh-treadmill-iot-control/`
+*   **Location**: `zenith-treadmill-iot-control/`
 
 ### 2. Running Machine MVS (Minimal Viable Service)
 *   **Description**: Models a simple agent representing a running machine, exposing basic control capabilities like start and stop.
@@ -78,17 +78,27 @@ We encourage you to explore each example to understand how the Agent Ontology ca
 *   **Key Concepts**: Multi-Agent Collaboration, Intent-Driven Workflow, Dynamic Delegation, Verifiable Credentials/Presentations, Semantic Mediation, Secure Execution Context, Security Binding, End-to-End Accountability.
 *   **Location**: `federated-digital-identity/`
 
-### 14. Secure Execution Environment Attestation (Detailed User Story)
+### 14. Cross-Border EUDI Wallet
+*   **Description**: A focused example of an agent modeling a cross-border interaction with a European Digital Identity (EUDI) wallet to present credentials.
+*   **Key Concepts**: Agent as Wallet, Verifiable Presentations, Cross-Border Trust.
+*   **Location**: `cross-border-eudi-wallet/`
+
+### 15. Taiwan SME EUDI Compliance
+*   **Description**: Models a compliance agent for a non-EU SME using the EUDI Wallet framework to interact with the EU market, managing multiple identity standards (EUDI, TW-DIW) and stablecoin payments.
+*   **Key Concepts**: Multi-Identity Agent, Compliance Automation, Cross-Border Business Operations.
+*   **Location**: `taiwan-sme-eudi-compliance/`
+
+### 16. Secure Execution Environment Attestation (Detailed User Story)
 *   **Description**: Details how an agent can provide a verifiable proof of its system's integrity, anchored in a Hardware Root of Trust (e.g., Arm TrustZone, TPM). This is critical for deploying safety-critical updates in environments like autonomous vehicles.
 *   **Key Concepts**: Remote Attestation, Hardware Root of Trust, DID for Hardware, Verifiable Boot Chain, End-to-End Trust, Security Binding (TPM Quote).
 *   **Location**: `secure-execution-attestation/`
 
-### 15. AI Liability Insurance x UL Certification (Detailed User Story)
+### 17. AI Liability Insurance x UL Certification (Detailed User Story)
 *   **Description**: Models a complete ecosystem of trust for safety-critical AI, involving third-party certification (like GlobalCert), specialized liability insurance, and immutable operational data for transparent claims adjudication in a scenario with an autonomous surgical robot.
 *   **Key Concepts**: AI Risk Management, Third-Party Certification, Verifiable Insurance Policies, Ledger-Based Adjudication, End-to-End Trust in High-Stakes Environments.
 *   **Location**: `ai-liability-insurance-ul-certification/`
 
-### 16. The Bachata Influencer: An Agent-Driven Social Economy (Detailed User Story)
+### 18. The Bachata Influencer: An Agent-Driven Social Economy (Detailed User Story)
 *   **Description**: A modern, creative-economy use case modeling a personal agent for a Bachata dancer and aspiring influencer. It covers the full lifecycle from event discovery, style recommendations, and automated registration to content creation, social media posting, and brand sponsorship.
 *   **Key Concepts**: Personal Agent, Creator Economy, Social/Economic Integration, Modeling Subjective Tasks, Digital-Physical Lifecycle.
 *   **Location**: `bachata-influencer-social-economy/`
