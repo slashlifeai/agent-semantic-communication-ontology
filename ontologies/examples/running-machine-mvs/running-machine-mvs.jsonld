@@ -1,42 +1,149 @@
-{
-  "@context": "https://ns.slashlife.ai/agent/context/agent.jsonld",
-  "@id": "https://ns.slashlife.ai/agent/examples/running-machine-mvs#RunningMachineAgent",
-  "@type": "core:Agent",
-  "rdfs:label": "Running Machine Agent",
-  "agent:hasProfile": {
-    "@type": "agent:AgentProfile",
-    "agent:coreIdentity": {
-      "@type": "agent:AgentIdentity",
-      "agent:did": "did:example:running-machine-123",
-      "agent:title": "Running Machine Agent",
-      "agent:version": "1.0.0"
-    },
-    "agent:purposeAndRole": {
-      "@type": "agent:PurposeRole",
-      "agent:objective": "To provide a controllable interface for a running machine.",
-      "agent:owner": "did:example:owner"
-    },
-    "agent:capabilities": {
-      "@type": "agent:CapabilityBundle",
-      "agent:skill": [
-        "Start",
-        "Stop"
-      ]
-    },
-    "agent:operationalTriggersAndIO": {
-      "@type": "agent:OperationalProfile",
-      "agent:trigger": {
-        "@type": "agent:Trigger",
-        "rdfs:label": "Control Command"
-      },
-      "agent:input": {
-        "@type": "agent:InputSpec",
-        "rdfs:label": "Start/Stop Command"
-      },
-      "agent:output": {
-        "@type": "agent:OutputSpec",
-        "rdfs:label": "Machine Status"
+[
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/running-machine-mvs#RunningMachineAgent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Running Machine Agent"
       }
-    }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b1",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b4"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b2"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#operationalTriggersAndIO": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b5"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b3"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b2",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:example:running-machine-123"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "Running Machine Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b3",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To provide a controllable interface for a running machine."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@value": "did:example:owner"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b4",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Start"
+      },
+      {
+        "@value": "Stop"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b5",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#OperationalProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#input": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b7"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#output": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b8"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#trigger": [
+      {
+        "@id": "_:n9cd9d95acce440418f667e4bf139acb4b6"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b6",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#Trigger"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Control Command"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b7",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#InputSpec"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Start/Stop Command"
+      }
+    ]
+  },
+  {
+    "@id": "_:n9cd9d95acce440418f667e4bf139acb4b8",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#OutputSpec"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Machine Status"
+      }
+    ]
   }
-}
+]

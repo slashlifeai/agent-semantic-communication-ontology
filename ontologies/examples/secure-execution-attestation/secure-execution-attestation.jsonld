@@ -1,164 +1,426 @@
-{
-  "@context": [
-    "https://ns.slashlife.ai/agent/context/agent.jsonld",
-    "https://ns.slashlife.ai/agent/context/intent.jsonld",
-    "https://ns.slashlife.ai/agent/context/delegation.jsonld",
-    "https://ns.slashlife.ai/agent/context/capability.jsonld",
-    "https://ns.slashlife.ai/agent/context/security-binding.jsonld",
-    "https://ns.slashlife.ai/agent/context/execution-context.jsonld"
-  ],
-  "@graph": [
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AutoCorpDID",
-      "@type": "core:AgentEntity",
-      "rdfs:label": "AutoCorp DID",
-      "core:did": "did:web:autocorp.com"
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#FirmwareUpdateServiceDID",
-      "@type": "core:AgentEntity",
-      "rdfs:label": "Firmware Update Service DID",
-      "core:did": "did:web:firmware.autocorp.com"
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VehicleDID",
-      "@type": "core:AgentEntity",
-      "rdfs:label": "Vehicle #AV-789 DID",
-      "core:did": "did:key:z6Mkr...AV789"
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#HardwareRootOfTrustDID",
-      "@type": "core:AgentEntity",
-      "rdfs:label": "Hardware Root of Trust (TPM) DID for #AV-789",
-      "core:did": "did:key:z6Mkp...TPM456"
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Firmware_Update_Management_Agent",
-      "@type": "core:Agent",
-      "rdfs:label": "Firmware Update Management Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:web:firmware.autocorp.com",
-          "agent:title": "Firmware Update Management Agent",
-          "agent:version": "3.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To manage and securely deploy software updates to the vehicle fleet.",
-          "agent:owner": {
-            "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AutoCorpDID"
-          }
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "Software Update Deployment",
-            "Remote Attestation Verification"
-          ]
-        }
+[
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#HardwareRootOfTrustDID",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#AgentEntity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Hardware Root of Trust (TPM) DID for #AV-789"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Vehicle_Attestation_Agent",
-      "@type": "core:Agent",
-      "rdfs:label": "Vehicle #AV-789 Attestation Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:key:z6Mkr...AV789",
-          "agent:title": "Vehicle #AV-789 Attestation Agent",
-          "agent:version": "1.2.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To generate and provide secure attestations of the vehicle's state, interfacing with the Hardware Root of Trust.",
-          "agent:owner": {
-            "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VehicleDID"
-          }
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "Hardware Attestation Generation",
-            "Secure Boot Measurement Reporting"
-          ]
-        }
+    ],
+    "https://ns.slashlife.ai/agent/core#did": [
+      {
+        "@value": "did:key:z6Mkp...TPM456"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#DeployBrakingUpdateIntent",
-      "@type": "core:Intent",
-      "rdfs:label": "Intent to Deploy Braking Update",
-      "intent:objective": "Deploy braking control algorithm v2.1 to vehicle #AV-789."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VerifyVehicleIntegrityIntent",
-      "@type": "core:Intent",
-      "rdfs:label": "Intent to Verify Vehicle Integrity",
-      "intent:objective": "Verify the secure boot state of vehicle #AV-789 as a precondition for a critical update."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#RequestAttestationDelegation",
-      "@type": "delegation:Delegation",
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Firmware_Update_Management_Agent"
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Firmware_Update_Management_Agent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Firmware Update Management Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b1",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b4"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b2"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b3"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b2",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:web:firmware.autocorp.com"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "Firmware Update Management Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "3.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b3",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To manage and securely deploy software updates to the vehicle fleet."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AutoCorpDID"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b4",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Software Update Deployment"
       },
-      "delegation:delegatesTo": {
-        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Vehicle_Attestation_Agent"
-      },
-      "delegation:delegationScope": "Provide a secure attestation of the boot chain, signed by the Hardware Root of Trust."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#GenerateAttestationAction",
-      "@type": "core:Action",
-      "rdfs:label": "Generate Secure Attestation Action",
-      "core:contextOf": {
+      {
+        "@value": "Remote Attestation Verification"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#GenerateAttestationAction",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Action"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Generate Secure Attestation Action"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#contextOf": [
+      {
         "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#RequestAttestationDelegation"
-      },
-      "core:producesArtifact": {
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#producesArtifact": [
+      {
         "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AttestationReport"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AttestationReport",
-      "@type": "core:Artifact",
-      "rdfs:label": "Secure Attestation Report for Vehicle #AV-789",
-      "core:description": "A semantically structured report containing boot-chain measurements and a cryptographic proof (Quote) from the Hardware Root of Trust.",
-      "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#bootchainHashes": {
-        "@list": [
-          "hash_of_uefi",
-          "hash_of_bootloader",
-          "hash_of_kernel"
-        ]
-      },
-      "security:securityBinding": {
-        "@type": "security:SecurityBinding",
-        "security:cryptographicBinding": "TPM2_Quote_Signature",
-        "security:trustModel": "Hardware_Root_of_Trust_via_AIK",
-        "security:proofValue": "base64-encoded-quote-from-hardware...",
-        "security:signedBy": {
-          "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#HardwareRootOfTrustDID"
-        }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AutoCorpDID",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#AgentEntity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "AutoCorp DID"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VerifyAttestationAction",
-      "@type": "core:Action",
-      "rdfs:label": "Verify Attestation Report Action",
-      "core:contextOf": {
-        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#OTA_Update_Management_Agent"
+    ],
+    "https://ns.slashlife.ai/agent/core#did": [
+      {
+        "@value": "did:web:autocorp.com"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#FirmwareUpdateServiceDID",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#AgentEntity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Firmware Update Service DID"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#did": [
+      {
+        "@value": "did:web:firmware.autocorp.com"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Vehicle_Attestation_Agent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Vehicle #AV-789 Attestation Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b5"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b5",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b8"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b6"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b7"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b6",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:key:z6Mkr...AV789"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "Vehicle #AV-789 Attestation Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.2.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b7",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To generate and provide secure attestations of the vehicle's state, interfacing with the Hardware Root of Trust."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VehicleDID"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b8",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Hardware Attestation Generation"
       },
-      "core:producesArtifact": {
+      {
+        "@value": "Secure Boot Measurement Reporting"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VehicleDID",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#AgentEntity"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Vehicle #AV-789 DID"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#did": [
+      {
+        "@value": "did:key:z6Mkr...AV789"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VerifyVehicleIntegrityIntent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Intent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Intent to Verify Vehicle Integrity"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/intent#objective": [
+      {
+        "@value": "Verify the secure boot state of vehicle #AV-789 as a precondition for a critical update."
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VerificationResult",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Artifact"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Attestation Verification Result"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#description": [
+      {
+        "@value": "Verification successful. Boot chain hashes match the golden measurement for this vehicle model. Signature is valid."
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AttestationReport",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Artifact"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Secure Attestation Report for Vehicle #AV-789"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#description": [
+      {
+        "@value": "A semantically structured report containing boot-chain measurements and a cryptographic proof (Quote) from the Hardware Root of Trust."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#bootchainHashes": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b9"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/security-binding#securityBinding": [
+      {
+        "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b10"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b9",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#_1": [
+      {
+        "@value": "hash_of_uefi"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#_2": [
+      {
+        "@value": "hash_of_bootloader"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#_3": [
+      {
+        "@value": "hash_of_kernel"
+      }
+    ]
+  },
+  {
+    "@id": "_:ne7a8787798ea41a4b8e914a707be7e09b10",
+    "@type": [
+      "https://ns.slashlife.ai/agent/security-binding#SecurityBinding"
+    ],
+    "https://ns.slashlife.ai/agent/security-binding#cryptographicBinding": [
+      {
+        "@value": "TPM2_Quote_Signature"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/security-binding#proofValue": [
+      {
+        "@value": "base64-encoded-quote-from-hardware..."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/security-binding#signedBy": [
+      {
+        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#HardwareRootOfTrustDID"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/security-binding#trustModel": [
+      {
+        "@value": "Hardware_Root_of_Trust_via_AIK"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#DeployBrakingUpdateIntent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Intent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Intent to Deploy Braking Update"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/intent#objective": [
+      {
+        "@value": "Deploy braking control algorithm v2.1 to vehicle #AV-789."
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#RequestAttestationDelegation",
+    "@type": [
+      "https://ns.slashlife.ai/agent/delegation#Delegation"
+    ],
+    "https://ns.slashlife.ai/agent/delegation#delegatedBy": [
+      {
+        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Firmware_Update_Management_Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/delegation#delegatesTo": [
+      {
+        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Vehicle_Attestation_Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/delegation#delegationScope": [
+      {
+        "@value": "Provide a secure attestation of the boot chain, signed by the Hardware Root of Trust."
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VerifyAttestationAction",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Action"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Verify Attestation Report Action"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#contextOf": [
+      {
+        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Firmware_Update_Management_Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/core#producesArtifact": [
+      {
         "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VerificationResult"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VerificationResult",
-      "@type": "core:Artifact",
-      "rdfs:label": "Attestation Verification Result",
-      "core:description": "Verification successful. Boot chain hashes match the golden measurement for this vehicle model. Signature is valid."
-    }
-  ]
-}
+    ]
+  }
+]

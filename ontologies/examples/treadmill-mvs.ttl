@@ -1,3 +1,4 @@
+@prefix : <https://ns.slashlife.ai/agent/examples#> .
 @prefix sac: <https://ns.slashlife.ai/agent/core#> .
 @prefix agent: <https://ns.slashlife.ai/agent/agent#> .
 @prefix ledger: <https://ns.slashlife.ai/agent/ledger#> .

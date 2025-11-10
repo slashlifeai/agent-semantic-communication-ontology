@@ -1,289 +1,586 @@
-{
-  "@context": [
-    "https://ns.slashlife.ai/agent/context/agent.jsonld",
-    "https://ns.slashlife.ai/agent/context/intent.jsonld",
-    "https://ns.slashlife.ai/agent/context/delegation.jsonld",
-    "https://ns.slashlife.ai/agent/context/security-binding.jsonld",
-    "https://ns.slashlife.ai/agent/context/payment.jsonld"
-  ],
-  "@graph": [
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ProcurementAgent",
-      "@type": "core:Agent",
-      "rdfs:label": "ACME Inc. Procurement Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:acme-procurement-agent-1",
-          "agent:title": "ACME Inc. Procurement Agent",
-          "agent:version": "1.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To identify and initiate procurement needs for ACME Inc.",
-          "agent:owner": "did:example:acme-inc"
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "Procurement Initiation",
-            "Supplier Sourcing"
-          ]
-        }
+[
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ProcurementIntent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Intent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Procure Parts and Pay Berlin Precision Parts"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#SupplierManagementAgent",
-      "@type": "core:Agent",
-      "rdfs:label": "ACME Inc. Supplier Management Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:acme-supplier-mgmt-agent-1",
-          "agent:title": "ACME Inc. Supplier Management Agent",
-          "agent:version": "1.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To manage supplier relationships, including verification and payment orchestration.",
-          "agent:owner": "did:example:acme-inc"
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "Supplier Onboarding",
-            "Contract Management",
-            "Payment Orchestration"
-          ]
-        }
+    ],
+    "https://ns.slashlife.ai/agent/intent#input": [
+      {
+        "@value": "https://example.com/acme/parts-spec-xyz"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#VerificationAgent",
-      "@type": "core:Agent",
-      "rdfs:label": "ACME Inc. Verification Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:acme-verification-agent-1",
-          "agent:title": "ACME Inc. Verification Agent",
-          "agent:version": "1.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To verify supplier credentials and compliance.",
-          "agent:owner": "did:example:acme-inc"
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "Credential Verification",
-            "Compliance Checking",
-            "TEE Attestation"
-          ]
-        }
+    ],
+    "https://ns.slashlife.ai/agent/intent#objective": [
+      {
+        "@value": "Procure high-precision components from Berlin Precision Parts and pay 50,000 EUR."
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#FinanceAgent",
-      "@type": "core:Agent",
-      "rdfs:label": "ACME Inc. Finance Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:acme-finance-agent-1",
-          "agent:title": "ACME Inc. Finance Agent",
-          "agent:version": "1.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To manage financial transactions and ensure accurate payments.",
-          "agent:owner": "did:example:acme-inc"
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "Payment Processing",
-            "Currency Exchange Orchestration",
-            "Ledger Recording"
-          ]
-        }
+    ],
+    "https://ns.slashlife.ai/agent/intent#output": [
+      {
+        "@value": "Payment confirmation for 50,000 EUR and receipt of parts."
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ForexAgent",
-      "@type": "core:Agent",
-      "rdfs:label": "External Forex Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:external-forex-agent-1",
-          "agent:title": "External Forex Agent",
-          "agent:version": "1.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To provide currency exchange services.",
-          "agent:owner": "did:example:forex-service-provider"
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "Currency Exchange",
-            "Rate Discovery"
-          ]
-        }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ForexAgent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "External Forex Agent"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#PaymentAgent",
-      "@type": "core:Agent",
-      "rdfs:label": "External SEPA Payment Agent",
-      "agent:hasProfile": {
-        "@type": "agent:AgentProfile",
-        "agent:coreIdentity": {
-          "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:external-sepa-payment-agent-1",
-          "agent:title": "External SEPA Payment Agent",
-          "agent:version": "1.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To execute SEPA payments.",
-          "agent:owner": "did:example:payment-service-provider"
-        },
-        "agent:capabilities": {
-          "@type": "agent:CapabilityBundle",
-          "agent:skill": [
-            "SEPA Transfer",
-            "Payment Confirmation"
-          ]
-        }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b17"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ProcurementIntent",
-      "@type": "core:Intent",
-      "rdfs:label": "Procure Parts and Pay Berlin Precision Parts",
-      "intent:objective": "Procure high-precision components from Berlin Precision Parts and pay 50,000 EUR.",
-      "intent:input": "https://example.com/acme/parts-spec-xyz",
-      "intent:output": "Payment confirmation for 50,000 EUR and receipt of parts."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_ProcurementToSupplierMgmt",
-      "@type": "delegation:Delegation",
-      "delegation:delegatedBy": {
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b17",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b20"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b18"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b19"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b18",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:example:external-forex-agent-1"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "External Forex Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b19",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To provide currency exchange services."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@value": "did:example:forex-service-provider"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b20",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Currency Exchange"
+      },
+      {
+        "@value": "Rate Discovery"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ProcurementAgent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ACME Inc. Procurement Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b1"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b1",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b4"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b2"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b3"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b2",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:example:acme-procurement-agent-1"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "ACME Inc. Procurement Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b3",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To identify and initiate procurement needs for ACME Inc."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@value": "did:example:acme-inc"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b4",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Procurement Initiation"
+      },
+      {
+        "@value": "Supplier Sourcing"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#FinanceAgent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ACME Inc. Finance Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b13"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b13",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b16"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b14"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b15"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b14",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:example:acme-finance-agent-1"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "ACME Inc. Finance Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b15",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To manage financial transactions and ensure accurate payments."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@value": "did:example:acme-inc"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b16",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Payment Processing"
+      },
+      {
+        "@value": "Currency Exchange Orchestration"
+      },
+      {
+        "@value": "Ledger Recording"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#SupplierManagementAgent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ACME Inc. Supplier Management Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b5"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b5",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b8"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b6"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b7"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b6",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:example:acme-supplier-mgmt-agent-1"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "ACME Inc. Supplier Management Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b7",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To manage supplier relationships, including verification and payment orchestration."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@value": "did:example:acme-inc"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b8",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Supplier Onboarding"
+      },
+      {
+        "@value": "Contract Management"
+      },
+      {
+        "@value": "Payment Orchestration"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#VerificationAgent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "ACME Inc. Verification Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b9"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b9",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b12"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b10"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b11"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b10",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:example:acme-verification-agent-1"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "ACME Inc. Verification Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b11",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To verify supplier credentials and compliance."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@value": "did:example:acme-inc"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b12",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "Credential Verification"
+      },
+      {
+        "@value": "Compliance Checking"
+      },
+      {
+        "@value": "TEE Attestation"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#PaymentAgent",
+    "@type": [
+      "https://ns.slashlife.ai/agent/core#Agent"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "External SEPA Payment Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#hasProfile": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b21"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b21",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentProfile"
+    ],
+    "https://ns.slashlife.ai/agent/agent#capabilities": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b24"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#coreIdentity": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b22"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#purposeAndRole": [
+      {
+        "@id": "_:n46743911cfc045089e727623c665d5e5b23"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b22",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#AgentIdentity"
+    ],
+    "https://ns.slashlife.ai/agent/agent#did": [
+      {
+        "@value": "did:example:external-sepa-payment-agent-1"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#title": [
+      {
+        "@value": "External SEPA Payment Agent"
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#version": [
+      {
+        "@value": "1.0.0"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b23",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#PurposeRole"
+    ],
+    "https://ns.slashlife.ai/agent/agent#objective": [
+      {
+        "@value": "To execute SEPA payments."
+      }
+    ],
+    "https://ns.slashlife.ai/agent/agent#owner": [
+      {
+        "@value": "did:example:payment-service-provider"
+      }
+    ]
+  },
+  {
+    "@id": "_:n46743911cfc045089e727623c665d5e5b24",
+    "@type": [
+      "https://ns.slashlife.ai/agent/agent#CapabilityBundle"
+    ],
+    "https://ns.slashlife.ai/agent/agent#skill": [
+      {
+        "@value": "SEPA Transfer"
+      },
+      {
+        "@value": "Payment Confirmation"
+      }
+    ]
+  },
+  {
+    "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_ProcurementToSupplierMgmt",
+    "@type": [
+      "https://ns.slashlife.ai/agent/delegation#Delegation"
+    ],
+    "https://ns.slashlife.ai/agent/delegation#delegatedBy": [
+      {
         "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ProcurementAgent"
-      },
-      "delegation:delegatesTo": {
+      }
+    ],
+    "https://ns.slashlife.ai/agent/delegation#delegatesTo": [
+      {
         "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#SupplierManagementAgent"
-      },
-      "delegation:delegationScope": "Verify new supplier Berlin Precision Parts and orchestrate payment of 50,000 EUR for components."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_SupplierMgmtToVerification",
-      "@type": "delegation:Delegation",
-      "delegation:delegatedBy": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#SupplierManagementAgent"
-      },
-      "delegation:delegatesTo": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#VerificationAgent"
-      },
-      "delegation:delegationScope": "Verify credentials of Berlin Precision Parts, including ISO 9001 certification."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#VerificationAction",
-      "@type": "core:Action",
-      "rdfs:label": "Execute Supplier Credential Verification",
-      "core:contextOf": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_SupplierMgmtToVerification"
-      },
-      "core:producesArtifact": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#VerificationReport"
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#VerificationReport",
-      "@type": "core:Artifact",
-      "rdfs:label": "Supplier Verification Report",
-      "core:description": "Verification of Berlin Precision Parts successful. ISO 9001 certificate valid.",
-      "security:securityBinding": {
-        "@type": "security:SecurityBinding",
-        "security:cryptographicBinding": "JWS",
-        "security:trustModel": "W3C-VC-JWT"
+    ],
+    "https://ns.slashlife.ai/agent/delegation#delegationScope": [
+      {
+        "@value": "Verify new supplier Berlin Precision Parts and orchestrate payment of 50,000 EUR for components."
       }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_SupplierMgmtToFinance",
-      "@type": "delegation:Delegation",
-      "delegation:delegatedBy": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#SupplierManagementAgent"
-      },
-      "delegation:delegatesTo": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#FinanceAgent"
-      },
-      "delegation:delegationScope": "Execute cross-border payment of 50,000 EUR to Berlin Precision Parts."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_FinanceToForex",
-      "@type": "delegation:Delegation",
-      "delegation:delegatedBy": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#FinanceAgent"
-      },
-      "delegation:delegatesTo": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ForexAgent"
-      },
-      "delegation:delegationScope": "Exchange USD to 50,000 EUR."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ForexAction",
-      "@type": "core:Action",
-      "rdfs:label": "Execute Currency Exchange",
-      "core:contextOf": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_FinanceToForex"
-      },
-      "core:producesArtifact": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ForexReceipt"
-      }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#ForexReceipt",
-      "@type": "core:Artifact",
-      "rdfs:label": "Currency Exchange Receipt",
-      "core:description": "USD to EUR exchange completed. Rate: 1 USD = 0.92 EUR. Transaction ID: FX7890123."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_FinanceToPayment",
-      "@type": "delegation:Delegation",
-      "delegation:delegatedBy": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#FinanceAgent"
-      },
-      "delegation:delegatesTo": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#PaymentAgent"
-      },
-      "delegation:delegationScope": "Transfer 50,000 EUR to Berlin Precision Parts (IBAN: DE89370400440532013000)."
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#PaymentAction",
-      "@type": "core:Action",
-      "rdfs:label": "Execute SEPA Payment",
-      "core:contextOf": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#Delegation_FinanceToPayment"
-      },
-      "core:producesArtifact": {
-        "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#PaymentConfirmation"
-      }
-    },
-    {
-      "@id": "https://ns.slashlife.ai/agent/examples/supplier-verification-cross-border-payment#PaymentConfirmation",
-      "@type": "core:Artifact",
-      "rdfs:label": "SEPA Payment Confirmation",
-      "core:description": "50,000 EUR successfully transferred to Berlin Precision Parts. Transaction ID: SEPA987654321."
-    }
-  ]
-}
+    ]
+  }
+]
