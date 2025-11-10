@@ -12,20 +12,20 @@
 # --- Agents --- 
 
 # ConnectedLiving Agents (Client)
-:ConnectedLivingProcurementAgent a core:Agent ;
-    rdfs:label "ConnectedLiving Procurement Agent" ;
+:SmartHomeProcurementAgent a core:Agent ;
+    rdfs:label "SmartHome Procurement Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:connectedliving-procurement-agent" ;
-            agent:title "ConnectedLiving Procurement Agent" ;
+            agent:did "did:example:smarthome-procurement-agent" ;
+            agent:title "SmartHome Procurement Agent" ;
             agent:version "1.0.0"
         ] ;
         agent:purposeAndRole [
             a agent:PurposeRole ;
-            agent:objective "To source and procure components/products for ConnectedLiving brand." ;
-            agent:owner "did:example:connectedliving-inc"
+            agent:objective "To source and procure components/products for SmartHome brand." ;
+            agent:owner "did:example:smarthome-inc"
         ] ;
         agent:capabilities [
             a agent:CapabilityBundle ;
@@ -34,20 +34,20 @@
     ] .
 
 # InnovateTech Taiwan Agents (Manufacturer/Brand)
-:InnovateTechSalesAgent a core:Agent ;
-    rdfs:label "InnovateTech Taiwan Sales Agent" ;
+:GlobalTechSalesAgent a core:Agent ;
+    rdfs:label "GlobalTech Solutions Sales Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:innovatetech-sales-agent" ;
-            agent:title "InnovateTech Taiwan Sales Agent" ;
+            agent:did "did:example:globaltech-sales-agent" ;
+            agent:title "GlobalTech Solutions Sales Agent" ;
             agent:version "1.0.0"
         ] ;
         agent:purposeAndRole [
             a agent:PurposeRole ;
             agent:objective "To manage client relationships and secure manufacturing/design contracts." ;
-            agent:owner "did:example:innovatetech-taiwan"
+            agent:owner "did:example:globaltech-solutions"
         ] ;
         agent:capabilities [
             a agent:CapabilityBundle ;
@@ -55,13 +55,13 @@
         ]
     ] .
 
-:InnovateTechProductionAgent a core:Agent ;
-    rdfs:label "InnovateTech Taiwan Production Agent" ;
+:GlobalTechProductionAgent a core:Agent ;
+    rdfs:label "GlobalTech Solutions Production Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:innovatetech-production-agent" ;
+            agent:did "did:example:globaltech-production-agent" ;
             agent:title "InnovateTech Taiwan Production Agent" ;
             agent:version "1.0.0"
         ] ;
@@ -76,13 +76,13 @@
         ]
     ] .
 
-:InnovateTechRD_Agent a core:Agent ;
-    rdfs:label "InnovateTech Taiwan R&D Agent" ;
+:GlobalTechRD_Agent a core:Agent ;
+    rdfs:label "GlobalTech Solutions R&D Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:innovatetech-rd-agent" ;
+            agent:did "did:example:globaltech-rd-agent" ;
             agent:title "InnovateTech Taiwan R&D Agent" ;
             agent:version "1.0.0"
         ] ;
@@ -97,19 +97,19 @@
         ]
     ] .
 
-:InnovateTechBrandStrategyAgent a core:Agent ;
-    rdfs:label "InnovateTech Taiwan Brand Strategy Agent" ;
+:GlobalTechBrandStrategyAgent a core:Agent ;
+    rdfs:label "GlobalTech Solutions Brand Strategy Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:innovatetech-brand-strategy-agent" ;
+            agent:did "did:example:globaltech-brand-strategy-agent" ;
             agent:title "InnovateTech Taiwan Brand Strategy Agent" ;
             agent:version "1.0.0"
         ] ;
         agent:purposeAndRole [
             a agent:PurposeRole ;
-            agent:objective "To define and execute the global brand strategy for InnovateHome." ;
+            agent:objective "To define and execute the global brand strategy for SmartSense." ;
             agent:owner "did:example:innovatetech-taiwan"
         ] ;
         agent:capabilities [
@@ -118,13 +118,13 @@
         ]
     ] .
 
-:InnovateTechMarketingAgent a core:Agent ;
-    rdfs:label "InnovateTech Taiwan Marketing Agent" ;
+:GlobalTechMarketingAgent a core:Agent ;
+    rdfs:label "GlobalTech Solutions Marketing Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:innovatetech-marketing-agent" ;
+            agent:did "did:example:globaltech-marketing-agent" ;
             agent:title "InnovateTech Taiwan Marketing Agent" ;
             agent:version "1.0.0"
         ] ;
@@ -139,13 +139,13 @@
         ]
     ] .
 
-:InnovateTecheCommerceAgent a core:Agent ;
-    rdfs:label "InnovateTech Taiwan eCommerce Agent" ;
+:GlobalTecheCommerceAgent a core:Agent ;
+    rdfs:label "GlobalTech Solutions eCommerce Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:innovatetech-ecommerce-agent" ;
+            agent:did "did:example:globaltech-ecommerce-agent" ;
             agent:title "InnovateTech Taiwan eCommerce Agent" ;
             agent:version "1.0.0"
         ] ;
@@ -160,13 +160,13 @@
         ]
     ] .
 
-:InnovateTechSupplyChainAgent a core:Agent ;
-    rdfs:label "InnovateTech Taiwan Supply Chain Agent" ;
+:GlobalTechSupplyChainAgent a core:Agent ;
+    rdfs:label "GlobalTech Solutions Supply Chain Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:example:innovatetech-supplychain-agent" ;
+            agent:did "did:example:globaltech-supplychain-agent" ;
             agent:title "InnovateTech Taiwan Supply Chain Agent" ;
             agent:version "1.0.0"
         ] ;
@@ -201,7 +201,7 @@
 # --- Phase 1: OEM --- 
 
 :OEM_ProcurementIntent a core:Intent ;
-    rdfs:label "OEM Order for CL-T-200 Thermostats" ;
+    rdfs:label "OEM Order for SH-T-200 Thermostats" ;
     intent:objective "Manufacture 100,000 CL-T-200 thermostats according to design #CL-SPEC-2025." ;
     intent:input "https://example.com/connectedliving/design-specs/CL-SPEC-2025" ;
     intent:output "100,000 CL-T-200 thermostats and QC report." .

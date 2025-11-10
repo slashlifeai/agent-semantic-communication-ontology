@@ -13,13 +13,13 @@
 
 # --- DIDs (as instances for clarity) ---
 
-:ManufacturerDID a core:AgentEntity ;
-    rdfs:label "Vehicle Manufacturer DID" ;
-    core:did "did:web:manufacturer.com" .
+:AutoCorpDID a core:AgentEntity ;
+    rdfs:label "AutoCorp DID" ;
+    core:did "did:web:autocorp.com" .
 
-:OTAServiceDID a core:AgentEntity ;
-    rdfs:label "OTA Update Service DID" ;
-    core:did "did:web:ota.manufacturer.com" .
+:FirmwareUpdateServiceDID a core:AgentEntity ;
+    rdfs:label "Firmware Update Service DID" ;
+    core:did "did:web:firmware.autocorp.com" .
 
 :VehicleDID a core:AgentEntity ;
     rdfs:label "Vehicle #AV-789 DID" ;
@@ -31,20 +31,20 @@
 
 # --- Agents ---
 
-:OTA_Update_Management_Agent a core:Agent ;
-    rdfs:label "OTA Update Management Agent" ;
+:Firmware_Update_Management_Agent a core:Agent ;
+    rdfs:label "Firmware Update Management Agent" ;
     agent:hasProfile [
         a agent:AgentProfile ;
         agent:coreIdentity [
             a agent:AgentIdentity ;
-            agent:did "did:web:ota.manufacturer.com" ;
-            agent:title "OTA Update Management Agent" ;
+            agent:did "did:web:firmware.autocorp.com" ;
+            agent:title "Firmware Update Management Agent" ;
             agent:version "3.0.0"
         ] ;
         agent:purposeAndRole [
             a agent:PurposeRole ;
             agent:objective "To manage and securely deploy software updates to the vehicle fleet." ;
-            agent:owner :ManufacturerDID
+            agent:owner :AutoCorpDID
         ] ;
         agent:capabilities [
             a agent:CapabilityBundle ;
@@ -86,7 +86,7 @@
 # --- Delegation ---
 
 :RequestAttestationDelegation a delegation:Delegation ;
-    delegation:delegatedBy :OTA_Update_Management_Agent ;
+    delegation:delegatedBy :Firmware_Update_Management_Agent ;
     delegation:delegatesTo :Vehicle_Attestation_Agent ;
     delegation:delegationScope "Provide a secure attestation of the boot chain, signed by the Hardware Root of Trust." .
 
@@ -116,7 +116,7 @@
 
 :VerifyAttestationAction a core:Action ;
     rdfs:label "Verify Attestation Report Action" ;
-    core:contextOf :OTA_Update_Management_Agent ;
+    core:contextOf :Firmware_Update_Management_Agent ;
     core:producesArtifact :VerificationResult .
 
 :VerificationResult a core:Artifact ;

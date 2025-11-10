@@ -112,9 +112,9 @@ ex:ArtifactShape
 
 # --- Specific Agent Shapes (if needed, extending AgentBaseShape) --- 
 
-ex:InnovateTechRD_AgentShape
+ex:GlobalTechRD_AgentShape
     a sh:NodeShape ;
-    sh:targetNode ex:InnovateTechRD_Agent ;
+    sh:targetNode ex:GlobalTechRD_Agent ;
     sh:property [
         sh:path agent:hasProfile ;
         sh:node [

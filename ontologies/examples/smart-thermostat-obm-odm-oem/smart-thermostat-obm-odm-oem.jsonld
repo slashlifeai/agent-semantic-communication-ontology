@@ -10,19 +10,19 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ConnectedLivingProcurementAgent",
       "@type": "core:Agent",
-      "rdfs:label": "ConnectedLiving Procurement Agent",
+      "rdfs:label": "SmartHome Procurement Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:connectedliving-procurement-agent",
-          "agent:title": "ConnectedLiving Procurement Agent",
+          "agent:did": "did:example:smarthome-procurement-agent",
+          "agent:title": "SmartHome Procurement Agent",
           "agent:version": "1.0.0"
         },
         "agent:purposeAndRole": {
           "@type": "agent:PurposeRole",
-          "agent:objective": "To source and procure components/products for ConnectedLiving brand.",
-          "agent:owner": "did:example:connectedliving-inc"
+          "agent:objective": "To source and procure components/products for SmartHome brand.",
+          "agent:owner": "did:example:smarthome-inc"
         },
         "agent:capabilities": {
           "@type": "agent:CapabilityBundle",
@@ -37,19 +37,12 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSalesAgent",
       "@type": "core:Agent",
-      "rdfs:label": "InnovateTech Taiwan Sales Agent",
+      "rdfs:label": "GlobalTech Solutions Sales Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:innovatetech-sales-agent",
-          "agent:title": "InnovateTech Taiwan Sales Agent",
-          "agent:version": "1.0.0"
-        },
-        "agent:purposeAndRole": {
-          "@type": "agent:PurposeRole",
-          "agent:objective": "To manage client relationships and secure manufacturing/design contracts.",
-          "agent:owner": "did:example:innovatetech-taiwan"
+          "agent:owner": "did:example:globaltech-solutions"
         },
         "agent:capabilities": {
           "@type": "agent:CapabilityBundle",
@@ -64,12 +57,12 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent",
       "@type": "core:Agent",
-      "rdfs:label": "InnovateTech Taiwan Production Agent",
+      "rdfs:label": "GlobalTech Solutions Production Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:innovatetech-production-agent",
+          "agent:did": "did:example:globaltech-production-agent",
           "agent:title": "InnovateTech Taiwan Production Agent",
           "agent:version": "1.0.0"
         },
@@ -91,12 +84,12 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechRD_Agent",
       "@type": "core:Agent",
-      "rdfs:label": "InnovateTech Taiwan R&D Agent",
+      "rdfs:label": "GlobalTech Solutions R&D Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:innovatetech-rd-agent",
+          "agent:did": "did:example:globaltech-rd-agent",
           "agent:title": "InnovateTech Taiwan R&D Agent",
           "agent:version": "1.0.0"
         },
@@ -119,18 +112,18 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechBrandStrategyAgent",
       "@type": "core:Agent",
-      "rdfs:label": "InnovateTech Taiwan Brand Strategy Agent",
+      "rdfs:label": "GlobalTech Solutions Brand Strategy Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:innovatetech-brand-strategy-agent",
+          "agent:did": "did:example:globaltech-brand-strategy-agent",
           "agent:title": "InnovateTech Taiwan Brand Strategy Agent",
           "agent:version": "1.0.0"
         },
         "agent:purposeAndRole": {
           "@type": "agent:PurposeRole",
-          "agent:objective": "To define and execute the global brand strategy for InnovateHome.",
+          "agent:objective": "To define and execute the global brand strategy for SmartSense.",
           "agent:owner": "did:example:innovatetech-taiwan"
         },
         "agent:capabilities": {
@@ -146,12 +139,12 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechMarketingAgent",
       "@type": "core:Agent",
-      "rdfs:label": "InnovateTech Taiwan Marketing Agent",
+      "rdfs:label": "GlobalTech Solutions Marketing Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:innovatetech-marketing-agent",
+          "agent:did": "did:example:globaltech-marketing-agent",
           "agent:title": "InnovateTech Taiwan Marketing Agent",
           "agent:version": "1.0.0"
         },
@@ -173,12 +166,12 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTecheCommerceAgent",
       "@type": "core:Agent",
-      "rdfs:label": "InnovateTech Taiwan eCommerce Agent",
+      "rdfs:label": "GlobalTech Solutions eCommerce Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:innovatetech-ecommerce-agent",
+          "agent:did": "did:example:globaltech-ecommerce-agent",
           "agent:title": "InnovateTech Taiwan eCommerce Agent",
           "agent:version": "1.0.0"
         },
@@ -201,12 +194,12 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSupplyChainAgent",
       "@type": "core:Agent",
-      "rdfs:label": "InnovateTech Taiwan Supply Chain Agent",
+      "rdfs:label": "GlobalTech Solutions Supply Chain Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:example:innovatetech-supplychain-agent",
+          "agent:did": "did:example:globaltech-supplychain-agent",
           "agent:title": "InnovateTech Taiwan Supply Chain Agent",
           "agent:version": "1.0.0"
         },
@@ -247,10 +240,10 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_ProcurementIntent",
       "@type": "core:Intent",
-      "rdfs:label": "OEM Order for CL-T-200 Thermostats",
-      "intent:objective": "Manufacture 100,000 CL-T-200 thermostats according to design #CL-SPEC-2025.",
+      "rdfs:label": "OEM Order for SH-T-200 Thermostats",
+      "intent:objective": "Manufacture 100,000 SH-T-200 thermostats according to design #CL-SPEC-2025.",
       "intent:input": "https://example.com/connectedliving/design-specs/CL-SPEC-2025",
-      "intent:output": "100,000 CL-T-200 thermostats and QC report."
+      "intent:output": "100,000 SH-T-200 thermostats and QC report."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_Delegation_SalesToProduction",
@@ -261,12 +254,12 @@
       "delegation:delegatesTo": {
         "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent"
       },
-      "delegation:delegationScope": "Strictly manufacture 100,000 CL-T-200 thermostats as per ConnectedLiving's design #CL-SPEC-2025, with 99.8% minimum yield."
+      "delegation:delegationScope": "Strictly manufacture 100,000 SH-T-200 thermostats as per SmartHome's design #CL-SPEC-2025, with 99.8% minimum yield."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_ManufacturingAction",
       "@type": "core:Action",
-      "rdfs:label": "OEM Manufacturing of CL-T-200",
+      "rdfs:label": "OEM Manufacturing of SH-T-200",
       "core:contextOf": {
         "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_Delegation_SalesToProduction"
       },
@@ -277,20 +270,20 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OEM_QCReport",
       "@type": "core:Artifact",
-      "rdfs:label": "OEM Quality Control Report for CL-T-200",
-      "core:description": "QC report for 100,000 CL-T-200 thermostats. Yield: 99.9%. Conforms to #CL-SPEC-2025."
+      "rdfs:label": "OEM Quality Control Report for SH-T-200",
+      "core:description": "QC report for 100,000 SH-T-200 thermostats. Yield: 99.9%. Conforms to #SH-SPEC-2025."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ODM_DesignProposal",
       "@type": "core:Artifact",
-      "rdfs:label": "InnovateTech IT-T-300 Thermostat Design Proposal",
-      "core:description": "Proposal for a new smart thermostat (IT-T-300) with lower power consumption and predictive maintenance. Design Spec: https://example.com/innovatetech/design-specs/IT-SPEC-300"
+      "rdfs:label": "GlobalTech GT-T-300 Thermostat Design Proposal",
+      "core:description": "Proposal for a new smart thermostat (GT-T-300) with lower power consumption and predictive maintenance. Design Spec: https://example.com/globaltech/design-specs/GT-SPEC-300"
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ODM_ProcurementIntent",
       "@type": "core:Intent",
-      "rdfs:label": "ODM Order for IT-T-300 Thermostats (ConnectedLiving EcoSense)",
-      "intent:objective": "Procure 200,000 IT-T-300 thermostats, rebranded as 'ConnectedLiving EcoSense'.",
+      "rdfs:label": "ODM Order for GT-T-300 Thermostats (SmartHome EcoSense)",
+      "intent:objective": "Procure 200,000 GT-T-300 thermostats, rebranded as 'SmartHome EcoSense'.",
       "intent:input": "https://example.com/innovatetech/design-specs/IT-SPEC-300",
       "intent:output": "200,000 ConnectedLiving EcoSense thermostats and QC report."
     },
@@ -303,13 +296,13 @@
       "delegation:delegatesTo": {
         "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent"
       },
-      "delegation:delegationScope": "Manufacture 200,000 IT-T-300 thermostats based on InnovateTech's design #IT-SPEC-300, with ConnectedLiving EcoSense branding."
+      "delegation:delegationScope": "Manufacture 200,000 GT-T-300 thermostats based on GlobalTech Solutions's design #GT-SPEC-300, with SmartHome EcoSense branding."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_BrandLaunchIntent",
       "@type": "core:Intent",
-      "rdfs:label": "InnovateHome Global Brand Launch",
-      "intent:objective": "Globally launch 'InnovateHome' brand smart thermostats and achieve 500,000 online sales in year 1.",
+      "rdfs:label": "SmartSense Global Brand Launch",
+      "intent:objective": "Globally launch 'SmartSense' brand smart thermostats and achieve 500,000 online sales in year 1.",
       "intent:input": "Market research, brand guidelines, product designs.",
       "intent:output": "500,000 units sold, established brand presence."
     },
@@ -322,7 +315,7 @@
       "delegation:delegatesTo": {
         "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechMarketingAgent"
       },
-      "delegation:delegationScope": "Execute global digital marketing campaigns for InnovateHome smart thermostats."
+      "delegation:delegationScope": "Execute global digital marketing campaigns for SmartSense smart thermostats."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToProduction",
@@ -333,7 +326,7 @@
       "delegation:delegatesTo": {
         "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechProductionAgent"
       },
-      "delegation:delegationScope": "Manufacture 500,000 InnovateHome smart thermostats for own inventory."
+      "delegation:delegationScope": "Manufacture 500,000 SmartSense smart thermostats for own inventory."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToeCommerce",
@@ -344,7 +337,7 @@
       "delegation:delegatesTo": {
         "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTecheCommerceAgent"
       },
-      "delegation:delegationScope": "Manage InnovateHome online sales, payment processing, and logistics."
+      "delegation:delegationScope": "Manage SmartSense online sales, payment processing, and logistics."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#OBM_Delegation_BrandToSupplyChain",
@@ -355,15 +348,15 @@
       "delegation:delegatesTo": {
         "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#InnovateTechSupplyChainAgent"
       },
-      "delegation:delegationScope": "Manage global supply chain and component procurement for InnovateHome production."
+      "delegation:delegationScope": "Manage global supply chain and component procurement for SmartSense production."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#ConsumerPurchaseIntent",
       "@type": "core:Intent",
-      "rdfs:label": "Consumer Purchase of InnovateHome Thermostat",
-      "intent:objective": "Purchase one InnovateHome smart thermostat from the official website.",
+      "rdfs:label": "Consumer Purchase of SmartSense Thermostat",
+      "intent:objective": "Purchase one SmartSense smart thermostat from the official website.",
       "intent:input": "Customer order details, payment information.",
-      "intent:output": "InnovateHome smart thermostat delivered, payment confirmed."
+      "intent:output": "SmartSense smart thermostat delivered, payment confirmed."
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#eCommerceOrderProcessingAction",
@@ -379,7 +372,7 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/smart-thermostat-obm-odm-oem#eCommerceOrderConfirmation",
       "@type": "core:Artifact",
-      "rdfs:label": "InnovateHome Order Confirmation",
+      "rdfs:label": "SmartSense Order Confirmation",
       "core:description": "Order #IH-20251109-001 confirmed. Payment received. Shipping initiated."
     }
   ]

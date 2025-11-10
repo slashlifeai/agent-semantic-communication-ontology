@@ -15,7 +15,7 @@ Before deploying a software update that could affect human safety, the OTA updat
 ## Key Concepts Illustrated
 This use case highlights the synergy between low-level hardware security and high-level semantic modeling:
 *   **Agent**: Represents the OTA Update Management Agent, the vehicle's top-level Agent, and a specialized Attestation Agent that interfaces with the hardware.
-*   **DID (Decentralized Identifier)**: Provides stable, verifiable, and cryptographically-bound identities for every entity in the trust chain: the Manufacturer, the OTA Service, the Vehicle itself, and crucially, the **Hardware Root of Trust (HRoT)**.
+*   **DID (Decentralized Identifier)**: Provides stable, verifiable, and cryptographically-bound identities for every entity in the trust chain: the AutoCorp, the OTA Service, the Vehicle itself, and crucially, the **Hardware Root of Trust (HRoT)**.
 *   **Intent**: The initial goal to update the vehicle's software, which triggers a prerequisite `Intent` to first verify the vehicle's integrity.
 *   **Delegation**: The OTA agent delegates the task of providing an attestation to the vehicle's Attestation Agent.
 *   **Action**: The execution of verification tasks, both on the vehicle (generating the attestation) and on the OTA server (validating the attestation).
@@ -28,17 +28,17 @@ This use case highlights the synergy between low-level hardware security and hig
 ## Workflow Breakdown and Ontology Mapping:
 
 ### 1. Initial Update Intent
--   **Description**: The OTA Update Management Agent initiates the process to deploy a new version of the braking control software to a specific vehicle.
+-   **Description**: The Firmware Update Management Agent initiates the process to deploy a new version of the braking control software to a specific vehicle.
 -   **Ontology Mapping**: A `core:Intent`, `:DeployBrakingUpdateIntent`, is created. Its `intent:objective` is "Deploy braking control algorithm v2.1 to vehicle #AV-789."
 
 ### 2. Prerequisite: Integrity Verification Intent
--   **Description**: The OTA agent's policy dictates that a full integrity check is required before deploying safety-critical updates. It therefore creates a new, prerequisite `Intent`.
+-   **Description**: The Firmware agent's policy dictates that a full integrity check is required before deploying safety-critical updates. It therefore creates a new, prerequisite `Intent`.
 -   **Ontology Mapping**: A `core:Intent`, `:VerifyVehicleIntegrityIntent`, is created. Its `intent:objective` is "Verify the secure boot state of vehicle #AV-789."
 
 ### 3. Delegation of Attestation Task
--   **Description**: The OTA agent delegates the task of providing the integrity proof to a specialized Attestation Agent running on the target vehicle.
+-   **Description**: The Firmware agent delegates the task of providing the integrity proof to a specialized Attestation Agent running on the target vehicle.
 -   **Ontology Mapping**: A `delegation:Delegation`, `:RequestAttestationDelegation`, is created.
-    *   `delegation:delegatedBy`: `:OTA_Update_Management_Agent` (`did:web:ota.manufacturer.com`).
+    *   `delegation:delegatedBy`: `:Firmware_Update_Management_Agent` (`did:web:firmware.autocorp.com`).
     *   `delegation:delegatesTo`: `:Vehicle_Attestation_Agent` (a service endpoint in the vehicle's DID document, `did:key:z...AV789`).
     *   `delegation:delegationScope`: "Provide a secure attestation of the boot chain, signed by the Hardware Root of Trust."
 
@@ -57,7 +57,7 @@ This use case highlights the synergy between low-level hardware security and hig
         *   `signedBy`: The DID of the HRoT, `did:key:z...TPM456`.
 
 ### 6. Verification of the Attestation Report
--   **Description**: The OTA Update Management Agent receives the `:AttestationReport`. It must now verify the report's authenticity and compare the measurements to a "golden" set of expected values for that specific vehicle model and software version.
+-   **Description**: The Firmware Update Management Agent receives the `:AttestationReport`. It must now verify the report's authenticity and compare the measurements to a "golden" set of expected values for that specific vehicle model and software version.
 -   **Ontology Mapping**: The `:OTA_Update_Management_Agent` performs a `core:Action`, `:VerifyAttestationAction`. This involves:
     1.  Resolving the HRoT's DID (`did:key:z...TPM456`) to get its public AIK.
     2.  Using the public AIK to verify the signature in the `proofValue`.
@@ -65,5 +65,5 @@ This use case highlights the synergy between low-level hardware security and hig
     4.  Comparing the `bootchainHashes` against a known-good configuration.
 
 ### 7. Deployment of Critical Update
--   **Description**: Only after the `:VerifyAttestationAction` is successfully completed does the OTA agent proceed with the original `:DeployBrakingUpdateIntent`. The trust established through remote attestation provides the necessary security guarantee to proceed with the safety-critical operation.
+-   **Description**: Only after the `:VerifyAttestationAction` is successfully completed does the Firmware agent proceed with the original `:DeployBrakingUpdateIntent`. The trust established through remote attestation provides the necessary security guarantee to proceed with the safety-critical operation.
 -   **Ontology Mapping**: The successful verification of the attestation is a precondition for the `core:Action` of deploying the update. The entire sequence is linked via `core:TraceEvent` instances, creating a complete, auditable record of the trust decision and the subsequent update.

@@ -55,8 +55,7 @@ ex:DelegationShape
     a sh:NodeShape ;
     sh:targetNode ex:RequestAttestationDelegation ;
     sh:property [
-        sh:path delegation:delegatedBy ;
-        sh:hasValue ex:OTA_Update_Management_Agent ;
+        sh:hasValue ex:Firmware_Update_Management_Agent ;
     ] ;
     sh:property [
         sh:path delegation:delegatesTo ;
@@ -122,7 +121,7 @@ ex:VerifyAttestationActionShape
     sh:targetNode ex:VerifyAttestationAction ;
     sh:property [
         sh:path core:contextOf ;
-        sh:hasValue ex:OTA_Update_Management_Agent ;
+        sh:hasValue ex:Firmware_Update_Management_Agent ;
     ] ;
     sh:property [
         sh:path core:producesArtifact ;

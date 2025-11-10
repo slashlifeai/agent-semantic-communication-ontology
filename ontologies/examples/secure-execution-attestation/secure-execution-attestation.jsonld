@@ -9,16 +9,16 @@
   ],
   "@graph": [
     {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#ManufacturerDID",
+      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AutoCorpDID",
       "@type": "core:AgentEntity",
-      "rdfs:label": "Vehicle Manufacturer DID",
-      "core:did": "did:web:manufacturer.com"
+      "rdfs:label": "AutoCorp DID",
+      "core:did": "did:web:autocorp.com"
     },
     {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#OTAServiceDID",
+      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#FirmwareUpdateServiceDID",
       "@type": "core:AgentEntity",
-      "rdfs:label": "OTA Update Service DID",
-      "core:did": "did:web:ota.manufacturer.com"
+      "rdfs:label": "Firmware Update Service DID",
+      "core:did": "did:web:firmware.autocorp.com"
     },
     {
       "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#VehicleDID",
@@ -33,22 +33,22 @@
       "core:did": "did:key:z6Mkp...TPM456"
     },
     {
-      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#OTA_Update_Management_Agent",
+      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Firmware_Update_Management_Agent",
       "@type": "core:Agent",
-      "rdfs:label": "OTA Update Management Agent",
+      "rdfs:label": "Firmware Update Management Agent",
       "agent:hasProfile": {
         "@type": "agent:AgentProfile",
         "agent:coreIdentity": {
           "@type": "agent:AgentIdentity",
-          "agent:did": "did:web:ota.manufacturer.com",
-          "agent:title": "OTA Update Management Agent",
+          "agent:did": "did:web:firmware.autocorp.com",
+          "agent:title": "Firmware Update Management Agent",
           "agent:version": "3.0.0"
         },
         "agent:purposeAndRole": {
           "@type": "agent:PurposeRole",
           "agent:objective": "To manage and securely deploy software updates to the vehicle fleet.",
           "agent:owner": {
-            "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#ManufacturerDID"
+            "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#AutoCorpDID"
           }
         },
         "agent:capabilities": {
@@ -103,8 +103,7 @@
     {
       "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#RequestAttestationDelegation",
       "@type": "delegation:Delegation",
-      "delegation:delegatedBy": {
-        "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#OTA_Update_Management_Agent"
+      "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Firmware_Update_Management_Agent"
       },
       "delegation:delegatesTo": {
         "@id": "https://ns.slashlife.ai/agent/examples/secure-execution-attestation#Vehicle_Attestation_Agent"
