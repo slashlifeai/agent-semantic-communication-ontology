@@ -183,6 +183,24 @@ In this view, every `CommunicativeAct` within a `Narrative` can be understood as
 
 By understanding `CommunicativeAct`s through this lens, the `Narrative` becomes more than a log; it becomes a **verifiable script of digital social reality**, where each act carries specific force and consequence.
 
+### 5.7. Theoretical Underpinnings: Luhmann's Communication Systems Theory (Optional Extension)
+
+Extending beyond individual speech acts, **Niklas Luhmann's Communication Systems Theory** offers a powerful sociological lens for understanding how complex multi-agent systems (MAS) can emerge and self-organize. Luhmann posited that social systems are not constituted by individuals, but by **communication itself**; communication is the fundamental element that recursively produces and reproduces the system.
+
+Our `Narrative` model finds a striking parallel here:
+
+*   **Communication as the Basic Element:** Each `CommunicativeAct` within a `Narrative` is precisely such a fundamental element. It's not merely data, but an event that recursively shapes the ongoing `Narrative`.
+*   **System Boundary:** The `Narrative-ID` defines the **operational boundary** of a specific communication system. All `CommunicativeAct`s sharing that ID constitute *that* particular system.
+*   **Self-Referentiality and Operational Closure:** A `Narrative` can be seen as a self-referential system. Each new `CommunicativeAct` refers to and builds upon previous acts within the same `Narrative`, creating an operationally closed system of meaning-making.
+
+**This theoretical framework is an optional extension, not a mandatory encoding within the core ontology.** However, it provides invaluable insights for:
+
+*   **Designing Emergent Agent Societies:** Understanding how complex collective behaviors and social structures can arise from simple, recursive communication acts.
+*   **Managing Complexity:** Offering a conceptual tool to analyze and design robust, self-regulating multi-agent systems that can cope with inherent complexity by focusing on communication rather than individual agent psychology.
+*   **Formalizing Digital Social Reality:** Providing a rigorous framework for how digital interactions, when structured as `Narrative`s, can constitute verifiable and auditable digital social systems.
+
+By viewing `Narrative`s through Luhmann's lens, we gain a deeper understanding of how our ontology facilitates the emergence of truly autonomous and self-organizing digital societies.
+
 ## 6. Who Is This For?
 
 *   **OS & Platform Developers:** To build next-generation "agent-native" operating systems.
