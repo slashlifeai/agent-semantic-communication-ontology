@@ -299,7 +299,37 @@ This completes a powerful, four-layered theoretical foundation:
 
 This entire structure provides the blueprint for a new digital civilization's "House of Being."
 
-## 8. Who Is This For?
+## 8. Historical Context: The Evolution of Computable Trust
+
+This ontology was not created in a vacuum. It stands on the shoulders of giants, representing the logical evolution of a 30-year quest for decentralized, trustworthy digital interaction. It synthesizes the cryptographic security of GPG, the decentralized ambitions of the Web of Trust, and the governance goals of Cyber Norms into a single, computable framework.
+
+### 8.1. From GPG/PGP to Decentralized Identifiers (DIDs)
+
+*   **The Foundation (GPG/PGP):** Provided the first widespread implementation of cryptographic identity, proving that a message was sent by a specific keyholder and was not tampered with.
+*   **The Evolution (DIDs):** Our use of DIDs inherits this core principle but evolves it. DIDs are more flexible, controller-centric, and platform-agnostic, allowing an agent to manage multiple identities for different contexts.
+
+### 8.2. From the Web of Trust to Verifiable Credentials (VCs)
+
+*   **The Ambition (Web of Trust):** The PGP Web of Trust was a brilliant attempt to decentralize identity verification through a network of social attestations ("I vouch that this key belongs to this person").
+*   **The Evolution (VCs):** The WoT proved difficult to scale and its attestations were too general. VCs are the realization of this ambition in a more granular and scalable way. Instead of just vouching for an identity, VCs allow authoritative issuers to make specific, structured, and verifiable claims about an agent's capabilities, attributes, or completed actions.
+
+### 8.3. From Cyber Norms to Computable Contracts
+
+*   **The Goal (Cyber Norms):** The early internet thrived on "Cyber Norms"—implicit, consensus-driven social rules and etiquette (e.g., RFCs, netiquette) that governed behavior.
+*   **The Evolution (`Narrative` + SHACL):** These norms were unenforceable by machines. Our framework makes these norms **computable and verifiable**:
+    *   The **`Narrative`** transforms the implicit history of an interaction into an explicit, immutable record of evidence.
+    *   **SHACL shapes** transform the unwritten social rules into explicit, machine-enforceable "rules of the game."
+    *   **`CommunicativeAct`s** transform ambiguous communication into actions with verifiable consequences.
+
+| Predecessor | What it Solved | Its Limitation | How Our Ontology Evolves It |
+| :--- | :--- | :--- | :--- |
+| **GPG/PGP** | Cryptographic Authenticity | Rigid, singular identity | **DIDs** (Flexible, multi-faceted identity) |
+| **Web of Trust** | Decentralized Identity Vouching | Scalability, lack of granularity | **VCs** (Precise, authoritative, verifiable claims) |
+| **Cyber Norms** | Social Governance & Etiquette | Unenforceable, implicit | **`Narrative` + SHACL** (Computable, verifiable contracts) |
+
+This historical evolution culminates in our ontology, which finally provides the tools to build a truly decentralized, trustworthy, and self-governing digital society.
+
+## 9. Who Is This For?
 
 *   **OS & Platform Developers:** To build next-generation "agent-native" operating systems.
 *   **AI Application Developers:** To create interoperable agents that can collaborate across a rich ecosystem.
