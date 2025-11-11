@@ -1,4 +1,4 @@
-# Semantic Delegation & Agent Communication Community Group
+# Semantic Agent Communication Community Group
 
 ## Draft Charter v0.1
 
