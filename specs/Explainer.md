@@ -238,7 +238,7 @@ In this view, every `CommunicativeAct` within a `Narrative` can be understood as
 *   **Deeper AI Reasoning:** Enabling AI agents to understand the illocutionary force behind communications, leading to more sophisticated negotiation, planning, and social intelligence.
 *   **Enhanced Human-AI Collaboration:** Bridging the gap between human social interaction patterns and machine-interpretable actions, fostering more intuitive and trustworthy partnerships.
 
-By understanding `CommunicativeAct`s through this lens, the `Narrative` becomes more than a log; it becomes a **verifiable script of digital social reality**, where each act carries specific force and consequence.
+By understanding `CommunicativeAct`s through this lens, the `Narrative` becomes more than a log; it can be seen as a verifiable script of digital social interactions, where each act is designed to carry specific force and consequence.
 
 ### 5.7. Theoretical Underpinnings: Luhmann's Communication Systems Theory (Optional Extension)
 
@@ -354,13 +354,13 @@ This historical evolution culminates in our ontology, which finally provides the
 *   **Enterprise Architects:** To design secure and auditable multi-agent systems for business automation.
 *   **Policymakers & Regulators:** To establish a technical foundation for AI governance and compliance.
 
-## 6. What Are the Benefits?
+## 10. What Are the Benefits?
 
-*   **Interoperability:** Agents from different vendors can finally work together.
-*   **Security & Trust:** Cryptographically verifiable identity and authority chains prevent unauthorized actions.
-*   **Accountability:** A clear, immutable audit trail answers "who did what and why?"
-*   **Innovation:** A common standard unlocks a new wave of innovation, allowing developers to build complex services by composing agents from across the ecosystem.
+*   **Interoperability:** Provides a common language that enables agents from different vendors to work together.
+*   **Security & Trust:** Establishes cryptographically verifiable identity and authority chains designed to prevent unauthorized actions.
+*   **Accountability:** Creates a clear, immutable audit trail that provides the data to answer "who did what and why?"
+*   **Innovation:** A common standard has the potential to unlock a new wave of innovation, allowing developers to build complex services by composing agents from across the ecosystem.
 
-## 7. Get Involved
+## 11. Get Involved
 
 This is a community effort to build the foundation for the next generation of AI. To learn more and participate, please see our project's `README.md` and join the discussion.
