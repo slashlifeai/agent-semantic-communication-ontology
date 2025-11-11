@@ -18,6 +18,18 @@ This language, an **ontology**, defines a set of core concepts that any agent ca
 
 By building on Web standards, we enable agents to communicate and interact over the internet in a decentralized, secure, and auditable manner, just like how the Web enabled global information exchange.
 
+### Defining "Agent": An Information-Theoretic Approach
+
+Before proceeding, it is crucial to define what we mean by "agent." The popular conception often conflates "agent" with "an LLM that can use tools." This is a narrow, implementation-specific view. We adopt a more fundamental and durable definition from the **Philosophy of Information (PI)**, particularly the work of Luciano Floridi.
+
+In this view, an agent is defined not by its internal composition, but by its **external, observable behavior**. An agent is an **"informational organism" (or "inforg")** that exhibits three key properties:
+
+1.  **Interactivity:** The ability to interact with its environment (including other agents). Our ontology models this directly through **`CommunicativeAct`s**, which are the formal mechanisms for sensing and acting within the shared informational environment.
+2.  **Autonomy:** The ability to change its internal state without direct external command. This is formally represented by an agent's power to **autonomously `Accept` or `Reject` a `Delegation`**, demonstrating independent decision-making.
+3.  **Adaptability:** The ability to change its behavior based on its interaction history (i.e., to learn). The **`Narrative`** provides the immutable, context-complete memory that allows an agent to analyze past interactions and adapt its future strategies.
+
+This definition is **radically implementation-agnostic**. An agent can be an LLM, a simple Python script, a complex enterprise system, or even a human participating through a compliant interface. As long as an entity exhibits these three properties within our framework, it *is* an agent. This ensures our standard is a future-proof foundation for any form of digital autonomous existence.
+
 ### The "Content," Not the "Container"
 
 A critical principle of this ontology is the separation of concerns. It standardizes the **semantic payload**—the meaning of the message itself—not the transport protocol used to send it.
