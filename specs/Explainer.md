@@ -274,6 +274,22 @@ Our `Narrative` model finds a striking parallel here:
 
 By viewing `Narrative`s through Luhmann's lens, we gain a deeper understanding of how our ontology facilitates the emergence of truly autonomous and self-organizing digital societies.
 
+### 5.8. Economic Underpinnings: Coase's Theory and the Reduction of Transaction Costs (Optional Extension)
+
+Beyond philosophical and sociological foundations, the ontology has profound economic implications, best understood through the lens of **Ronald Coase's "The Nature of the Firm."** Coase's Nobel-winning insight was that firms exist to minimize **transaction costs**—the costs incurred in using an open market, such as search, bargaining, contracting, and enforcement.
+
+Our ontology can be viewed as a direct, systematic assault on these transaction costs for a decentralized AI economy. It provides the foundational infrastructure to make the "market" of AI agents so efficient that the need for large, monolithic, centrally-controlled AI "firms" (i.e., closed platforms) is dramatically reduced.
+
+The framework achieves this by targeting specific transaction costs with dedicated semantic tools:
+
+| Transaction Cost | Description in AI Context | Ontology's Solution |
+| :--- | :--- | :--- |
+| **Search & Discovery** | The cost of finding a capable and trustworthy agent for a specific task. | **`Capability` & VCs:** A standardized, machine-readable format for agents to advertise their skills, complemented by Verifiable Credentials (VCs) to prove their qualifications. |
+| **Bargaining & Contracting** | The cost of negotiating terms and formalizing a binding agreement. | **`Delegation` as a Computable Contract:** A lightweight, verifiable, and machine-interpretable primitive that serves as a formal "power of attorney," drastically lowering the cost and complexity of creating agreements. |
+| **Enforcement & Verification** | The cost of ensuring the other party fulfills the agreement and resolving disputes. | **`LedgerRecord` & `SecurityBinding`:** An immutable, auditable record of execution, often cryptographically signed, which provides undeniable proof of performance and serves as the basis for automated arbitration. |
+
+By radically lowering these costs, the ontology enables the formation of **dynamic, "on-the-fly" digital firms**. An agent can act as a temporary "manager," assembling a team of specialist agents for a single project by issuing `Delegation`s, and then dissolving the team once the `Narrative` is complete. This fosters a more fluid, competitive, and innovative ecosystem, preventing the lock-in that arises when transaction costs are high.
+
 ## 6. Position within the TCP/IP Stack: A Semantic Payload
 
 The relationship of our ontology to foundational protocols like TCP/IP is not an analogy but a direct, technical positioning. Our framework defines the **application-layer payload** that is transported by these protocols.
