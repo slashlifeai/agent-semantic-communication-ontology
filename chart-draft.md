@@ -4,6 +4,8 @@
 
 ---
 
+This Community Group will operate entirely asynchronously, using GitHub issues and pull requests as the primary discussion and decision platform. No regular meetings will be scheduled.
+
 ### 1. Motivation
 
 Current multi-agent systems rely heavily on model-dependent patterns and lack a minimal, interoperable interface for intent exchange, semantic delegation, and responsibility boundaries.
